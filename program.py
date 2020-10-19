@@ -24,7 +24,7 @@ def PRGA(vectS, mess):
         j = (j + vectS[i])%256
         vectS[i], vectS[j] = vectS[j], vectS[i]
         k = S[((vectS[j] + vectS[i])%256)]
-        out += '{:02x}'.format(hex(((ord(mess[0])^(k))%256)))
+        out += upper(hex((ord(mess[0])^(k))%256)[2:4])
         mess = mess[1:]
     return out
     
