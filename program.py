@@ -36,9 +36,7 @@ for line in fileinput.input():
 
 # Obtener las llaves y texto plano, limpiando el input
 key = lines[0].replace("\n","")
-key = key.replace(" ","")
-text = lines[1].replace(" ","") 
-text = text.replace("\n","")
+text = lines[1].replace("\n","")
 
 # Algoritmo main
 S = []
