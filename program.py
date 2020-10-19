@@ -11,7 +11,7 @@ def KSA(vectS, k, mess):
     j = 0
     lenght = len(k)
     for i in range(0,256):
-        j = (j + vectS[i] + int(k[i%lenght]))%256
+        j = (j + vectS[i] + ord(k[i%lenght]))%256
         vectS[i], vectS[j] = vectS[j], vectS[i]
     return vectS
 
@@ -24,7 +24,7 @@ def PRGA(vectS, mess):
         j = (j + vectS[i])%256
         vectS[i], vectS[j] = vectS[j], vectS[i]
         k = S[((vectS[j] + vectS[i])%256)]
-        out += str((int(mess)^(k))%256)
+        out += chr((int(mess)^(k))%256)
         mess = mess[1:]
     return out
     
